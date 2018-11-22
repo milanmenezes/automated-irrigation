@@ -56,14 +56,13 @@ while ck==1:
  
         p=list(find(fd, ","))
         q=list(find(fd, '\r'))
-        MsgNo=fd[p[0]+1:q[1]]
-        print MsgNo       
+        MsgNo=fd[p[0]+1:q[1]]       
  
 # Read the message corresponds to the message number
-        # rd=port.write('AT+CMGR='+MsgNo+'\r\n')
-        # msg=''
-        # for j in range(10):
-        #     rcv = port.read(20)
-        #     msg=msg+rcv
-        # print msg
+        rd=port.write('AT+CMGR='+MsgNo+'\r\n')
+        msg=''
+        for j in range(10):
+            rcv = port.read(20)
+            msg=msg+rcv
+        print msg
     time.sleep(0.1)
